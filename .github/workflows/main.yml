@@ -41,8 +41,8 @@ jobs:
         run: |
           eb init -p python-3.6 hello-world --region us-east-1
       - name: Create test environment
-          run: |
-            eb create test-environment
+        run: |
+          eb create test-environment
   build:
     runs-on: ubuntu-latest
     steps:
