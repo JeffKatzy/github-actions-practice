@@ -42,7 +42,7 @@ jobs:
           eb init -p python-3.6 hello-world --region us-east-2
       - name: Create test environment
         run: |
-          eb create test-environment
+          (eb use test-environment && eb status test-environment && eb deploy) || eb create test-environment
   build:
     runs-on: ubuntu-latest
     steps:
