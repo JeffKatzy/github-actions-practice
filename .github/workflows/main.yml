@@ -39,7 +39,7 @@ jobs:
           aws-region: us-east-2
       - name: Create EBS application
         run: |
-          eb init -p python-3.6 hello-world --region us-east-1
+          eb init -p python-3.6 hello-world --region us-east-2
       - name: Create test environment
         run: |
           eb create test-environment
