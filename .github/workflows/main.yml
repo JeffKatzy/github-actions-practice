@@ -5,7 +5,7 @@ on:
 jobs:
   deploy-to-test:
     needs:
-      - build
+      - test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -30,7 +30,7 @@ jobs:
       - name: Create test environment
         run: |
           (eb use test-environment && eb status test-environment && eb deploy) || eb create test-environment
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
